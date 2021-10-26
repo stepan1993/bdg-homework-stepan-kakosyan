@@ -1,0 +1,75 @@
+Բոլոր հրամանների համար կարող եք օգտագործել sudo հրամանը, եթե ունեք համապատասխան թույլատվությունը, այլապես կապնվեք ձեր սերվերի գլխավոր օգտատերերի հետ
+
+1. Ներբեռնեք prometheus վերջին վերսիան
+	wget https://github.com/prometheus/prometheus/releases/download/v2.30.3/prometheus-2.30.3.linux-amd64.tar.gz
+
+2. Բացեք արխիվ պանակը 
+	tar -xvf prometheus-2.30.3.linux-amd64.tar.gz
+
+3. Տեղափոխեք prometheus և promtool binary նիշքեռը  prometheus-2.30.3.linux-amd64/ պանակից դեպի /usr/local/bin/ պանակ
+	 mv prometheus-2.30.3.linux-amd64/prometheus /usr/local/bin/
+	 mv prometheus-2.30.3.linux-amd64/promtool /usr/local/bin/
+
+4. Ստեղծեք նոր օգտատեր  prometheus֊ի համար
+	 useradd -rs /bin/false prometheus
+
+5. Փոխեք սեփականատեր օգտատիրոջը  prometheus և promtool պանակների համար.
+	 chown prometheus:prometheus /usr/local/bin/prometheus
+	 chown prometheus:prometheus /usr/local/bin/promtool 
+
+6. Ստեղծեք նոր պանակներ անհրաժեշտ կարգավորիչ նիշքերը տեղադրելու համար.
+	 mkdir /etc/prometheus
+	 mkdir /var/lib/prometheus
+
+7. Տեղափոխեք անհրաժեշտ գրադարանները /etc/prometheus նորաստեղծ պանակում.
+	 mv prometheus-2.30.3.linux-amd64/consoles /etc/prometheus
+	 mv prometheus-2.30.3.linux-amd64/console_libraries /etc/prometheus
+
+8. Փոխեք սեփականատեր օգտատիրոջը consoles և console_libraries֊ների համար /etc/prometheus պանակում
+	 chown -R prometheus: prometheus /etc/prometheus/consoles
+	 chown -R prometheus: prometheus /etc/prometheus/console_libraries
+
+9. Ստեղծեք և բացեք prometheus կարգավորիչ նիծքը
+	 nano /etc/prometheus/prometheus.yml
+
+10. Տեղադրեք հետևյալ կոդը այդ նիշքում և պահպանեք այն:
+
+global:
+ scrape_interval: 15s
+scrape_configs:
+ - job_name: 'prometheus'
+ scrape_interval: 5s
+ static_configs:
+ - targets: ['localhost:9090']
+
+11. Ստեղծեք և բացեք systemd նիշքը, ոռը օգնելու է գործարկել prometheus֊ին
+	nano /etc/systemd/system/prometheus.service
+
+12.Տեղադրեք հետևյալ կոդը այդ նիծքում:
+
+Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+[Service]
+User=promethues
+Group= promethues
+Type=simple
+ExecStart=/usr/local/bin/prometheus \
+ --config.file /etc/prometheus/prometheus.yml \
+ --storage.tsdb.path /var/lib/prometheus/ \
+ --web.console.templates=/etc/prometheus/consoles \
+ --web.console.libraries=/etc/prometheus/console_libraries
+[Install]
+WantedBy=multi-user.target
+
+13. Վերագործարկեք systemd daemon֊ը 
+	 systemctl daemon-reload
+14. Միացրեք prometheus֊ը
+	 systemctl enable prometheus.service
+15. Գորշարկեք prometheus֊ը
+	 systemctl start prometheus.service
+16. Գործարկման կարգավիճակը ստուեգելուհամար հավաքեք հետևյալ հրամանը
+	 systemctl status prometheus.service
+
+17. Բացեք բրաուզերով հետևյալ հասցեն http://localhost:9090

@@ -1,0 +1,46 @@
+Բոլոր հրամանների համար կարող եք օգտագործել sudo հրամանը, եթե ունեք համապատասխան թույլատվությունը, այլապես կապնվեք ձեր սերվերի գլխավոր օգտատերերի հետ
+
+1. Նեռբերնեք node-exporter lվեռջին վերսիան օգտագորշելով հետևյալ հղումը 
+	wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz
+
+2. Բացեք ներբեռնված արխիվ ֆայլը
+	tar -xvf node_exporter-1.2.2.linux-amd64.tar.gz
+
+3. Տեղափոխեք node-exporter binary նիշքը  node_exporter-1.2.2.linux-amd64 պանակից դեպի /usr/local/bin/ պանակ
+	mv node_exporter-1.2.2.linux-amd64/node_exporter /usr/local/bin
+
+4. Ստեղծեք նոր օգտատեր node-exporter֊ի համար 
+	useradd -rs /bin/false node_exporter
+
+5. Ստեղծեք և բացեք systemd նիշքը, որը օգնելու է node_exporter֊ին սկսել իր աշխատանքը
+	sudo nano /etc/systemd/system/node_exporter.service 
+
+6. Տեղադռեք հետևյալ կոդը բացված տերմինալում և պահպանեք այն:
+
+
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+
+7. Վերագործարկեք systemd daemon֊ը 
+	 systemctl daemon-reload
+8․ Ակտիվացրեք վերևում ստեղծած  systemd նիշքը
+	 systemctl enable node_exporter.service
+9․ Գործարկեք այն
+	 systemctl start node_exporter.service
+10․ Գործարկման հաջողությունը ստուգելու համար ստուգեք դրա կարգավիճակը
+	 systemctl status node_exporter.service
+
+
+11. Բացեք http://localhost:9100 ձեռ բրաուզերում
+
+
