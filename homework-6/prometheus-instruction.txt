@@ -47,7 +47,7 @@ scrape_configs:
 
 12.Տեղադրեք հետևյալ կոդը այդ նիծքում:
 
-Unit]
+[Unit]
 Description=Prometheus
 Wants=network-online.target
 After=network-online.target
