@@ -1,0 +1,11 @@
+    1  ls
+    2  sudo apt install build-essential dkns linux-headers-$(uname -r)
+    3  sudo apt-get install build-essential dkns linux-headers-$(uname -r)
+    4  ls
+    5  who
+    6  pwd
+    7  last
+    8  ls
+    9  touch Hello
+   10  ls
+   11  history > Desktop/history.txt
