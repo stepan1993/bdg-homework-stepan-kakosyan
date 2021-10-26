@@ -1,0 +1,47 @@
+ 24  touch test-file-assignment
+   25  sudo touch test-file-assignment
+   26  sudo mkdir test-diectory-assignment
+   27  ll test-file-assignmet
+   28  ls
+   29  ll test-file-assignment
+   30  ll test-file-assignment > output-file
+   31  sudo ll test-file-assignment > output-file
+   32  sudo ll test-file-assignment >> output-file
+   33  sudo touch output-file
+   34  sudo ll test-file-assignment >> output-file
+   35  ls
+   36  rm -r output-file
+   37  rm -r test-directory-assignment
+   38  rm -r test-diectory-assignment
+   39  ls
+   40  cd tmp
+   41  sudo touch test-file-assignment
+   42  sudo mkdir test-directory-assignment
+   43  ll test-file-assignment
+   44  ll test-file-assignment > output-file
+   45  ll test-directory-assignment > output-directory
+   46  sudo useradd test
+   47  sudo groupadd researcher
+   48  sudo chmod -a -G researcher test
+   49  sudo chmod -a researcher test
+   50  sudo usermod -a -G researcher test
+   51  sudo chown test:test test-file-assignment
+   52  sudo chown test:researcher test-file-assignment
+   53  sudo chown test:test test-file-assignment
+   54  sudo chown test:researcher test-directory-assignment
+   55  sudo chmod 107 test-file-assignment
+   56  sudo chmod 700 test-directory-assignment
+   57  ll test-file-assignment >> output-file >> output-file
+   58  sudo userdel test
+   59  sudo groupdel researcher
+   60  ll test-directory-assignment >> output-file >> output-file
+   61  sudo ll test-directory-assignment >> output-file >> output-file
+   62  ll test-directory-assignment
+   63  sudo ll test-directory-assignment
+   64  sudo chmod 777 test-directory-assignment
+   65  sudo ll test-directory-assignment
+   66  sudo ll test-directory-assignment >> output-file >> output-file
+   67  ll test-directory-assignment >> output-file >> output-file
+   68  ll test-directory-assignment >> output-file >> output-directory
+   69  ll test-file-assignment >> output-file >> output-file
+   70  history

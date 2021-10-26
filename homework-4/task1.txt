@@ -1,0 +1,39 @@
+24  sudo useradd jane
+   25  sudo userdel jane
+   26  sudo useradd -m ani
+   27  cd home
+   28  ls
+   29  sudo /
+   30  cd /
+   31  ls
+   32  cd home
+   33  ls
+   34  sudo userdel ani
+   35  ls
+   36  sudo useradd -mk aram
+   37  sudo userdel -r ani
+   38  sudo rm -r ani
+   39  sudo useradd -mk /stepan aram
+   40  ls
+   41  id aram
+   42  sudo groupadd 1500 researcher
+   43  sudo groupadd -g 1500 researcher
+   44  sudo usermod -g researcher aram
+   45  sudo usermod -G sudo aram
+   46  id aram
+   47  groups
+   48  sudo passwd aram
+   49  sudo su aram
+   50  su aram
+   51  cd /etc/groups
+   52  cd ..//etc/groups
+   53  cd ../etc/groups
+   54  cd /
+   55  ls
+   56  cd etc
+   57  ls
+   58  cd group
+   59  cat group
+   60  sudo userdel -r aram
+   61  cat group
+   62  history

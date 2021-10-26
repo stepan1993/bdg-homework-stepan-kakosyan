@@ -1,0 +1,13 @@
+77  sudo cp /etc/passwd /tmp
+   78  sudo cp /etc/group /tmp
+   79  sudo useradd jane
+   80  sudo useradd -c "Jane is a researcher" /bin/bash jane
+   81  sudo usermod -c "Jane is a researcher" /bin/bash jane
+   82  sudo usermod -c "Jane is a researcher" jane
+   83  sudo usermod -a -G sudo jane
+   84  sudo diff /tmp/group /etc/group
+   85  sudo diff /tmp/passwd /etc/passwd
+   86  sudo deluser jane sudo
+   87  sudo diff /tmp/group /etc/group
+   88  sudo diff /tmp/passwd /etc/passwd
+   89  history

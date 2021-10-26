@@ -1,0 +1,36 @@
+cronjob working commands in crontab -e
+
+0 * * * * /home/crontabfunctions/memory-hour.sh
+*/56 * * * * /home/crontabfunctions/memory-minutes.sh
+0 0 * * * /home/crontabfunctions/memory-day.sh
+0 * * * * /home/crontabfunctions/process-hour.sh
+
+cronjob bashes
+free > /tmp/cronjobfunctions/memory-hour.txt
+free > /tmp/cronjobfunctions/memory-minutes.txt
+free > /tmp/cronjobfunctions/memory-day.txt
+ps -e | wc -l > /tmp/cronjobfunctions/process-hour.txt
+history
+
+63  crontab -e
+   64  free
+   65  cd /
+   66  cd home
+   67  sudo mkdir crontabfunctions
+   68  sudo nano memory-hour.sh
+   69  0 * * * * /home/crontabfunctions/memory-hour.sh
+   70  crontab 0 * * * * /home/crontabfunctions/memory-hour.sh
+   71  cd ../
+   72  crontab 0 * * * * /home/crontabfunctions/memory-hour.sh
+   73  crontab -e
+   74  cd /home/crontabfunctions
+   75  sudo nano memory-hour.sh
+   76  ls
+   77  crontab 0 * * * * /home/crontabfunctions/memory-hour.sh
+   78  sudo nano memory-hour.sh
+   79  sudo nano memory-minutes.sh
+   80  sudo nano memory-day.sh
+   81  sudo nano process-hour.sh
+   82  ps -e | wc -l
+   83  sudo nano process-hour.sh
+   84  crontab -e

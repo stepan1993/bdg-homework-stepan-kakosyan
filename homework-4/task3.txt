@@ -1,0 +1,5 @@
+72  sudo cp /etc/shadow /tmp
+   73  sudo passwd stepan
+   74  sudo passwd root
+   75  sudo diff /tmp/shadow /etc/shadow
+   76  history
