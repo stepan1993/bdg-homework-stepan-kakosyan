@@ -1,0 +1,86 @@
+Task 1
+  527  alias tmp="ls cd /tmp"
+  528  tmp
+  529  unalias tmp
+  530  tmp
+  531  history
+
+Task 2
+  544  echo "The apartment costs $100000"
+  545  echo "Hello; World"
+  546  cost="5000"
+  547  echo "The service xosts $cost"
+
+Task 3 permission part
+ touch test.sh
+  571  ls -l test.sh
+  572  chmod test.sh u=rwx
+  573  man chmod
+  574  chmod u=rwx test.sh
+  575  ls -l test.sh
+  576  chmod u=rwx g=--- o=--- test.sh
+  577  chmod g=---  test.sh
+  578  ls -l test.sh
+  579  chmod o=---  test.sh
+  580  chmod u=rwx,go=--- test.sh
+  581  ls -l test.sh
+  582  chmod u=rw-,g=---,o=rwx test.sh
+  583  chmod u=r-w,g=---,o=rwx test.sh
+  584  chmod u=r--,g=---,o=-wx test.sh
+  585  chmod ug=rw-,o=--- test.sh
+  586  chmod u=rwx,g=---,o=-wx test.sh
+  587  chmod ug=r--,o=rwx test.sh
+  588  chmod u=rwx,go=r-- test.sh
+  589  chmod 700 test.sh
+  590  chmod 707 test.sh
+  591  chmod 607
+  592  chmod 607 test.sh
+  593  chmod 507 test.sh
+  594  chmod 403 test.sh
+  595  chmod 660 test.sh
+  596  chmod 703 test.sh
+  597  chmod 447 test.sh
+  598  chmod 744 test.sh
+
+Task 4
+600  colour="red"
+  601  echo $colour
+  602  colour="blue"
+  603  echo $colour
+  604  printenv
+  605  printenv > env.txt
+  606  cat env.txt
+  607  export COLOUR="red"
+  608  printenv > env-new.txt
+  609  car env-new.txt
+  610  cat env-new.txt
+  611  printenv
+  612  diff env.txt env-new.txt
+  613  unset COLOUR
+
+Task 5
+  619  touch first-file
+  620  cp first-file /tmp
+  621  cd tmp
+  622  ls
+  623  cd ../
+  624  mkdir first-directory
+  625  mv first-file first-directory
+  626  cd first-directory
+  627  ls
+  628  cd ../
+  629  mv first-directory /tmp
+  630  rm /tmp/first-directory
+  631  cd /tmp
+  632  ls
+  633  rm first-directory
+  634  rm -r first-directory
+  635  rm first-file
+
+Task in slide 
+cat syslog | grep -v "kernel" > kernel_info
+  649  cat syslog | grep -v "kernel" > kernel_info.txt
+  650  ls
+  651  history
+
+second part connected with Apache I can't do in this server. In my personal PC I couldn't install ubuntu yet. I ave some problem, will done later on.
