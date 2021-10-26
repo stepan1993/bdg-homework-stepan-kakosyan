@@ -41,6 +41,6 @@ WantedBy=multi-user.target
 	 systemctl status node_exporter.service
 
 
-11. Բացեք http://localhost:9100 ձեռ բրաուզերում
+11. Բացեք http://localhost:9100 ձեr բրաուզերում
 
 
