@@ -1,0 +1,161 @@
+    1  ping
+    2  whoami
+    3  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    4  sudo apt install ./google-chrome-stable_current_amd64.deb
+    5  cd /tmp
+    6  curl -LO https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
+    7  sudo apt install curl
+    8  curl -LO https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
+    9  tar -xvf node_exporter-0.18.1.linux-amd64.tar.gz
+   10  sudo mv node_exporter-0.18.1.linux-amd64/node_exporter /usr/local/bin/
+   11  sudo useradd -rs /bin/false node_exporter
+   12  sudo vi /etc/systemd/system/node_exporter.service
+   13  cd /tmp
+   14  sudo nano /etc/systemd/system/node_exporter.service
+   15  sudo systemctl daemon-reload
+   16  sudo systemctl start node_exporter
+   17  sudo systemctl status node_exporter
+   18  sudo systemctl enable node_exporter
+   19  sudo apt install nginx 
+   20  sudo systemctl status nginx
+   21  sudo systemctl start nginx
+   22  sudo useradd --no-create-home --shell /bin/false prome
+   23  sudo useradd --no-create-home --shell /bin/false node_exporter
+   24  sudo mkdir /etc/prometheus
+   25  sudo mkdir /var/lib/prometheus
+   26  wget https://github.com/prometheus/prometheus/releases/download/v2.28.1/prometheus-2.28.1.linux-amd64.tar.gz
+   27  tar -xvf prometheus-2.28.1.linux-amd64.tar.gz
+   28  sudo cp prometheus-2.28.1.linux-amd64/prometheus /usr/local/bin/
+   29  sudo cp prometheus-2.28.1.linux-amd64/promtool /usr/local/bin/
+   30  sudo chown prome:prome /usr/local/bin/prometheus
+   31  sudo chown prome:prome /usr/local/bin/promtool
+   32  sudo cp -r prometheus-2.28.1.linux-amd64/consoles /etc/prometheus
+   33  sudo cp -r prometheus-2.28.1.linux-amd64/console_libraries /etc/prometheus
+   34  sudo chown -R prome:prome /etc/prometheus/consoles
+   35  sudo chown -R prome:prome /etc/prometheus/console_libraries
+   36  sudo nano /etc/prometheus/prometheus.yml
+   37  sudo nano /etc/systemd/system/prometheus.service
+   38  sudo systemctl daemon-reload
+   39  sudo systemctl enable prometheus
+   40  sudo systemctl status prometheus
+   41  sudo systemctl enable prometheus
+   42  sudo systemctl status prometheus
+   43  sudo systemctl starts prometheus
+   44  sudo systemctl enable prometheus
+   45  sudo systemctl status prometheus
+   46  ufw allow 9090/tcp
+   47  sudo su
+   48  sudo systemctl status prometheus
+   49  sudo nano /etc/systemd/system/prometheus.service
+   50  sudo systemctl daemon-reload
+   51  sudo systemctl start prometheus
+   52  sudo systemctl status prometheus
+   53  sudo nano /etc/systemd/system/prometheus.service
+   54  sudo systemctl daemon-reload
+   55  sudo systemctl start prometheus
+   56  sudo systemctl status prometheus
+   57  sudo nano /etc/prometheus/prometheus.yml
+   58  sudo systemctl daemon-reload
+   59  sudo systemctl start prometheus
+   60  sudo systemctl status prometheus
+   61  sudo nano /etc/systemd/system/prometheus.service
+   62  sudo systemctl daemon-reload
+   63  sudo systemctl start prometheus
+   64  sudo systemctl status prometheus
+   65  sudo nano /etc/systemd/system/prometheus.service
+   66  sudo systemctl status prometheus
+   67  /bin/chmod -R 777 /data
+   68  /bin/chmod -R 777 /var/lib/prometheus
+   69  chmod -R 777 /var/lib/prometheus
+   70  ls -l /var/lib/prometheus
+   71  ls -l /var/lib
+   72  chown -R prome:prome /var/lib/prometheus
+   73  sudo chown prome:prome /var/bin/prometheus
+   74  sudo chown prome:prome /var/lib/prometheus
+   75  sudo systemctl daemon-reload
+   76  sudo chown prome:prome /var/bin/prometheus
+   77  sudo systemctl start prometheus
+   78  sudo systemctl status prometheus
+   79  ufw allow 9090/tcp
+   80  sudo su
+   81  sudo apt-get install -y apt-transport-https
+   82  sudo apt-get install -y software-properties-common wget
+   83  wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+   84  echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+   85  sudo apt-get install grafana
+   86  sudo ls /usr/lib/systemd/system/grafana-server.service
+   87  wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+   88  sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+   89  sudo apt update
+   90  apt-cache policy grafana
+   91  sudo apt install grafana
+   92  sudo systemctl start grafana-server
+   93  sudo systemctl status grafana-server
+   94  sudo systemctl enable grafana-server
+   95  sudo nano /etc/nginx/sites-available/your_domain
+   96  sudo nano /etc/nginx/sites-available/test-domain
+   97  ls /etc/nginx/sites-available
+   98  sudo nano /etc/nginx/sites-available/default
+   99  sudo nginx -t
+  100  sudo systemctl reload nginx
+  101  sudo nano /etc/grafana/grafana.ini
+  102  sudo systemctl restart grafana-server
+  103  sudo systemctl status grafana-server
+  104  ls /etc/nginx/sites-available
+  105  sudo nano  /etc/nginx/sites-available
+  106  sudo nano  /etc/nginx/sites-available/default
+  107  sudo systemctl restart nginx
+  108  sudo systemctl status nginx
+  109  sudo service nginx reload
+  110  sudo systemctl status nginx
+  111  sudo nano  /etc/nginx/sites-available/default
+  112  sudo service nginx reload
+  113  sudo nano  /etc/nginx/sites-available/default
+  114  sudo service nginx reload
+  115  sudo service apache2 reload
+  116  sudo nano  /etc/nginx/sites-available/default
+  117  cd /var/www/html
+  118  ls
+  119  cat index.html
+  120  sudo nano nginx.html
+  121  sudo nano  /etc/nginx/sites-available/default
+  122  sudo service nginx reload
+  123  sudo service nginx status
+  124  sudo service nginx stop
+  125  sudo service nginx start
+  126  sudo nano  /etc/nginx/sites-available/default
+  127  sudo service nginx start
+  128  sudo nano  /etc/nginx/sites-available/default
+  129  sudo service nginx start 
+  130  sudo nano  /etc/nginx/sites-available/default
+  131  sudo service nginx start
+  132  sudo service nginx restart
+  133  sudo nano  /etc/nginx/sites-available/default
+  134  mkdir nginx
+  135  sudo mkdir nginx
+  136  sudo nano index.html
+  137  cd nginx
+  138  sudo nano index.html
+  139  sudo service nginx restart
+  140  nano /etc/zabbix/zabbix_agentd.conf
+  141  sudo nano /etc/zabbix/zabbix_agentd.conf
+  142  systemctl start zabbix-agent
+  143  sudo systemctl start zabbix-agent
+  144  sudo systemctl enable zabbix-agent
+  145  sudo nano /etc/php/7.4/apache2/php.ini
+  146  sudo systemctl restart zabbix-agent
+  147  sudo systemctl enable zabbix-agent
+  148  sudo systemctl restart apache2
+  149  mysql
+  150  sudo mysql
+  151  sudo nano /etc/zabbix/zabbix_server.conf
+  152  systemctl restart zabbix-server
+  153  sudo systemctl restart apache2
+  154  zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | mysql -uzabbix -p zabbix
+  155  systemctl restart zabbix-server zabbix-agent httpd php-fpm
+  156  sudo systemctl enable zabbix-server zabbix-agent httpd php-fpm
+  157  sudo service nginx status
+  158  sudo service apache2 status
+  159  sudo service zabbix-server status
+  160  history
+
