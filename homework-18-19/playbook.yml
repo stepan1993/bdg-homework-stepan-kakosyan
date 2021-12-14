@@ -1,0 +1,10 @@
+- name: install monitoring stack
+  hosts: all
+  become: yes
+  roles:
+    - zabbix
+#    - docker
+#    - prometheus
+#    - grafana
+#    - node-exporter
+#    - cadvisor
