@@ -1,0 +1,44 @@
+  417  sudo nano last.pe
+  418  sudo nano last.pem
+  419  sudo chmod 400 last.pem
+  420  ssh -i "last.pem" ubuntu@ec2-54-209-254-224.compute-1.amazonaws.com
+  421  ls -li
+  422  ssh -i "last.pem" ubuntu@ec2-54-209-254-224.compute-1.amazonaws.com
+  423  sudo chmod 600 last.pem
+  424  ssh -i "last.pem" ubuntu@ec2-54-209-254-224.compute-1.amazonaws.com
+  425  sudo chmod 400 last.pem
+  426  ssh -i "last.pem" ubuntu@ec2-54-209-254-224.compute-1.amazonaws.com
+  427  sudo ssh -i "last.pem" ubuntu@ec2-54-209-254-224.compute-1.amazonaws.com
+  428  /etc/default
+  429  cd /etc
+  430  ls
+  431  cd ansible
+  432  ls
+  433  sudo nano hosts
+  434  sudo ansible ect -m ping
+  435  sudo nano hosts
+  436  sudo ansible ec2 -m ping
+  437  sudo nano hosts
+  438  sudo ansible ec2 -m ping
+  439  sudo nano hosts
+  440  sudo ansible ec2 -m ping
+  441  sudo ansible -m shell -a "docker run -d -p 9100:9100" -b
+  442  sudo ansible ec2 -m shell -a "docker run -d -p 9100:9100" -b
+  443  sudo ssh -i "last.pem" ubuntu@ec2-54-209-254-224.compute-1.amazonaws.com
+  444  cd /home/stepan/.ssh
+  445  sudo ssh -i "last.pem" ubuntu@ec2-54-209-254-224.compute-1.amazonaws.com
+  446  sudo ansible ec2 -m shell -a "docker run -d -p 9100:9100 prom/node-exporter" -b
+  447  sudo nano ~/prometheus/prometheus.yml
+  448  sudo ansible ec2 -m copy -a "~/prometheus/prometheus.yml ~/prometheus/prometheus.yml"
+  449  sudo ansible ec2 -m copy ~/prometheus/prometheus.yml ~/prometheus/prometheus.yml
+  450  sudo ansible ec2 -m copy -a "src=~/prometheus/prometheus.yml dest=~/prometheus/prometheus.yml"
+  451  sudo ansible ec2 -m copy -a "src=~/prometheus/prometheus.yml dest=~/prometheus"
+  452  sudo ansible ec2 -m copy -a "src=/home/stepan/prometheus/prometheus.yml dest=~/prometheus/prometheus.yml"
+  453  sudo ansible ec2 -m shell -a "mkdir /home/ubuntu/prometheus" -b
+  454  sudo ansible ec2 -m copy -a "src=/home/stepan/prometheus/prometheus.yml dest=/home/ubuntu/prometheus/prometheus.yml"
+  455  sudo ansible ec2 -m shell -a "chmod 777 /home/ubuntu/prometheus" -b
+  456  sudo ansible ec2 -m copy -a "src=/home/stepan/prometheus/prometheus.yml dest=/home/ubuntu/prometheus/prometheus.yml"
+  457  sudo ansible ec2 -m shell -a "docker run -d -p 9090:9090 --name=prometheus -v /home/ubuntu/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml" -b
+  458  sudo ansible ec2 -m shell -a "docker run -d -p 3000:3000 --name grafana grafana/grafana-enterprise:8.2.0" -b
+  459  history
+  460  history > /home/stepan/homework-17.txt
